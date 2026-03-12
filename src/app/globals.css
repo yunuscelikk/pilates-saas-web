@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #e9e9ff;
+  --color-primary-100: #d6d5ff;
+  --color-primary-200: #b8b7ff;
+  --color-primary-300: #9a98ff;
+  --color-primary-400: #7e7ce8;
+  --color-primary-500: #6260e1;
+  --color-primary-600: #6260e1;
+  --color-primary-700: #5654d0;
+  --color-primary-800: #4543a8;
+  --color-primary-900: #363488;
+
+  --color-brand: #6260e1;
+  --color-brand-dark: #5654d0;
+  --color-brand-light: #e9e9ff;
+  --color-brand-foreground: #ffffff;
+
+  --color-sidebar: #0f172a;
+  --color-sidebar-hover: #1e293b;
+  --color-sidebar-active: #334155;
+
+  --radius-lg: 0.5rem;
+  --radius-md: calc(var(--radius-lg) - 2px);
+  --radius-sm: calc(var(--radius-lg) - 4px);
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient-shift 6s ease infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-gradient {
+    animation: none;
+  }
+}
